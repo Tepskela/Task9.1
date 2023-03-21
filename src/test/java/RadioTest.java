@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RadioTest {
 
     //Тест граничных значений станций радио---------------------------------
@@ -12,7 +10,7 @@ class RadioTest {
 
         radio.setNomberStation(10);
 
-        int expected = 0;
+        int expected = 10;
         int actual = radio.getNomberStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -21,9 +19,9 @@ class RadioTest {
     public void testEquallyMaxStation() {
         Radio radio = new Radio();
 
-        radio.setNomberStation(9);
+        radio.setNomberStation(10);
 
-        int expected = 9;
+        int expected = 10;
         int actual = radio.getNomberStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -32,9 +30,9 @@ class RadioTest {
     public void testLessMaxStation() {
         Radio radio = new Radio();
 
-        radio.setNomberStation(8);
+        radio.setNomberStation(9);
 
-        int expected = 8;
+        int expected = 9;
         int actual = radio.getNomberStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -78,7 +76,7 @@ class RadioTest {
     public void testButtonNextAboveMaxStation() {
         Radio radio = new Radio();
 
-        radio.setNomberStation(9);
+        radio.setNomberStation(10);
 
         radio.next();
 
@@ -91,11 +89,11 @@ class RadioTest {
     public void testButtonNextEquallyMaxStation() {
         Radio radio = new Radio();
 
-        radio.setNomberStation(8);
+        radio.setNomberStation(9);
 
         radio.next();
 
-        int expected = 9;
+        int expected = 10;
         int actual = radio.getNomberStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -104,11 +102,11 @@ class RadioTest {
     public void testButtonPrevLessMaxStation() {
         Radio radio = new Radio();
 
-        radio.setNomberStation(9);
+        radio.setNomberStation(10);
 
         radio.prev();
 
-        int expected = 8;
+        int expected = 9;
         int actual = radio.getNomberStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -121,7 +119,7 @@ class RadioTest {
 
         radio.prev();
 
-        int expected = 9;
+        int expected = 10;
         int actual = radio.getNomberStation();
         Assertions.assertEquals(expected, actual);
     }

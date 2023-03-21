@@ -2,6 +2,14 @@ public class Radio {
     //переменные -------------
     private int nomberStation;
     private int soundVolume;
+    private int maxStation;
+
+    public Radio () {
+        maxStation = 10;
+    }
+    public Radio (int stationCount) {
+        maxStation = stationCount - 1;
+    }
 
 
     //СТАНЦИЯ--------------------------------
@@ -15,7 +23,7 @@ public class Radio {
         if (newNomberStation < 0) {
             return;
         }
-        if (newNomberStation > 9) {
+        if (newNomberStation > maxStation) {
             return;
         }
         this.nomberStation = newNomberStation;
@@ -23,7 +31,7 @@ public class Radio {
 
     //изменение станции ---
     public void next() {
-        if (nomberStation != 9) {
+        if (nomberStation != maxStation) {
             nomberStation++;
         } else {
             nomberStation = 0;
@@ -34,7 +42,7 @@ public class Radio {
         if (nomberStation != 0) {
             nomberStation--;
         } else {
-            nomberStation = 9;
+            nomberStation = maxStation;
         }
     }
 
